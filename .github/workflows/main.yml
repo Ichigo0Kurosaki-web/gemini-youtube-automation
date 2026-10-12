@@ -51,7 +51,7 @@ jobs:
           echo "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > credentials.json
         shell: bash
 
-          - name: 🚀 Run Autonomous Production Pipeline
+         - name: 🚀 Run Autonomous Production Pipeline
       id: production-run
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
