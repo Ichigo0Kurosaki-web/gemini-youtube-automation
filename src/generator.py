@@ -146,7 +146,7 @@ def generate_lesson_content(lesson_title):
     try:
         client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
         prompt = f"""
-        You are creating a lesson for the 'AI for Developers by {YOUR_NAME}' series. The topic is '{lesson_title}'.
+        You are creating a lesson for the 'AI for Developers by {YOUR_NAME}' series.The topic is '{lesson_title}'.
         The style is: Assume the viewer is a beginner developer or non-tech person who wants to learn AI from scratch.
         Use analogies and clear, simple language. Each concept must be explained from a developer's perspective, assuming no prior AI or ML knowledge.
 
