@@ -51,7 +51,7 @@ jobs:
           echo "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > credentials.json
         shell: bash
 
-         - name: 🚀 Run Autonomous Production Pipeline
+      - name: 🚀 Run Autonomous Production Pipeline
       id: production-run
       env:
         GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -59,8 +59,8 @@ jobs:
         YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
         YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
         YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-      run: python main.py
-
+      run: python main.py 
+      
       - name: 🔎 Upload Audio Artifact for Debugging
         if: always()
         uses: actions/upload-artifact@v4
@@ -68,7 +68,7 @@ jobs:
           name: audio-debug-files
           path: output/*.wav
 
-      - name: 🎥 Upload Final Video for Debugging
+     - name: 🎥 Upload Final Video for Debugging
         if: always()
         uses: actions/upload-artifact@v4
         with:
